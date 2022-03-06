@@ -9,7 +9,7 @@ function validateForm() {
   }
   
   async function setData() {
-      
+      // select the target element
       const list = document.getElementById("result");
       while (list.hasChildNodes()) {  
           list.removeChild(list.firstChild);
@@ -37,23 +37,6 @@ function validateForm() {
           let res = await fetch(url);
           json = await res.json();
           return json.country;
-      } catch (error) {
-          console.log(error);
-      }
-  }
-  
-  async function getDataOfCountry(country) { 
-      let url = 'https://api.nationalize.io?name=' + country;
-      try {
-          let res = await fetch(url);
-          json = await res.json();
-          console.log(json);
-          return json.name;
-      } catch (error) {
-          console.log(error);
-      }
-  }
-
       } catch (error) {
           console.log(error);
       }
