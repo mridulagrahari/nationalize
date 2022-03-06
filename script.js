@@ -49,14 +49,3 @@ function validateForm() {
           console.log(error);
       }
   }
-
-  async function getDataOfprobability(probability) {
-    let url = 'https://api.nationalize.io?name=' + probability;
-    try {
-        let res = await fetch(url);
-        json = await res.json();
-        return json.probability;
-    } catch (error) {
-        console.log(error);
-    }
-}
